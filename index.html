@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ecommerce</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner container">
+        <div class="header__menu">
+          <button
+          class="header__burger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="header-dropdown"
+          >
+            <span class="header__burger-icon"></span>
+          </button>
+
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-item"><a href="#" class="header__nav-link">Home</a></li>
+              <li class="header__nav-item"><a href="#" class="header__nav-link">Collections</a></li>
+              <li class="header__nav-item"><a href="#" class="header__nav-link">New</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <a href="#" class="header__logo">
+          <img src="./src/assets/icons/logo.svg" alt="Logo">
+        </a>
+        
+        <div class="header__actions">
+          <a href="#" class="header__action" aria-label="Favorite"><img  src="./src/assets/icons/favorite.svg" alt="Favorite"></a>
+          <a href="#" class="header__action" aria-label="Cart"><img src="./src/assets/icons/cart.svg" alt="Cart"></a>
+          <a href="#" class="header__action" aria-label="Profile"><img src="./src/assets/icons/profile.svg" alt="Profile"></a>
+        </div>
+      </div>
+
+      <div class="header__dropdown">
+          <div class="header__dropdown-inner container">
+            <ul class="header__categories">
+              <li class="header__categories-item"><a href="#">MEN</a></li>
+              <li class="header__categories-item"><a href="#">WOMEN</a></li>
+              <li class="header__categories-item"><a href="#">KIDS</a></li>
+            </ul>
+
+            <form class="header__search" role="search" hidden>
+              <button class="header__search-btn" type="submit" aria-label="Search"></button>
+              <input type="search" class="header__search-input" name="q" placeholder="Search">
+            </form>
+          </div>
+        </div>
+    </header>
+
+    <main>
+
+      <section class="hero">
+        <div class="hero__inner container">
+          <div class="hero__content">
+            <h1 class="hero__title">NEW<br>COLLECTION</h1>
+            <p class="hero__subtitle">Summer<br>2024</p>
+            <a href="#" class="hero__cta">Go To Shop <img src="#" alt=""></a>
+
+            <div class="hero__controls">
+              <button class="slider__arrow slider__arrow--prev" type="button" aria-controls="hero-slider"><img src="" alt=""></button>
+              <button class="slider__arrow slider__arrow--next" type="button" aria-controls="hero-slider"><img src="" alt=""></button>
+            </div>
+          </div>
+
+          <div class="hero__slider">
+            <div class="slider" id="hero-slider">
+              <div class="slider__track">
+                <article class="slider__slide"><a href="#" class="slider__link"><img src="" alt="" class="slider__img"></a></article>
+                <article class="slider__slide"><a href="#" class="slider__link"><img src="" alt="" class="slider__img"></a></article>
+                <article class="slider__slide"><a href="#" class="slider__link"><img src="" alt="" class="slider__img"></a></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="week">
+        <div class="week__header container">
+          <h2 class="week__title">NEW<br>THIS WEEK<sup class="week__count">(50)</sup></h2>
+          <a class="week__link" href="#">See All</a>
+        </div>
+        <div class="week__slider">
+          <div class="slider" id="week-slider">
+            <div class="slider__viewport">
+              <div class="slider__track">
+                <article class="slider__slide product-card">
+                  <div class="product-card__image-wrapper">
+                    <img src="" alt="" class="product-card__image">
+                    <button class="product-card__cart" type="button" aria-label="Add to cart"></button>
+                  </div>
+                  <div class="product-card__body">
+                    <p class="product-card__type"></p>
+                    <h3 class="product-card__title">
+                      <a href="#" class="product-card__title-link"></a>
+                    </h3>
+                    <p class="product-card__price"></p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="week__controls">
+              <button class="slider__arrow slider__arrow--prev" type="button" aria-controls="week-slider"><img src="" alt=""></button>
+              <button class="slider__arrow slider__arrow--next" type="button" aria-controls="week-slider"><img src="" alt=""></button>
+            </div>
+        </div>
+      </section>
+
+      <section class="collections">
+        <div class="collections__inner container">
+          <div class="collections__header">
+            <h2 class="collections__title">
+              XIV<br>
+              COLLECTIONS<br>
+              23-24
+            </h2>
+
+            <!-- Filters -->
+            <div class="collections__controls">
+
+              <div class="collections__actions">
+                <button class="collections__actions-btn" type="button" data-action="filters">
+                  Filters<span class="collections__actions-icon">(+)</span>
+                </button>
+
+                <button class="collections__actions-btn" type="button" data-action="sort">
+                  Sorts<span class="collections__actions-icon">(-)</span>
+                </button>
+              </div>
+
+              <div class="collections__filters" data-filters>
+                <button class="collections__filter is-active" type="button" data-filter="all">(all)</button>
+
+                <div class="collections__filters-track" data-filters-track>
+                  <button class="collections__filter" type="button" data-filter="men">Men</button>
+                  <button class="collections__filter" type="button" data-filter="women">Women</button>
+                  <button class="collections__filter" type="button" data-filter="kid">KID</button>
+                </div>
+                
+                <div class="collections__filters-sort" data-sort-panel> 
+                  <button class="collections__filter-btn is-active" type="button" data-sort="price-asc">Less to more</button>
+                  <button class="collections__filter-btn" type="button" data-sort="price-desc">More to less</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="collections__catalog">
+            <div class="collections__catalog-list">
+              <!-- Здесь список товаров карточек -->
+            </div>
+            <button class="collections__catalog-btn">More</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="brand">
+        <div class="brand__inner container">
+          <div class="brand__info">
+            <h2 class="brand__title">
+              Our Approach to fashion design    
+            </h2>
+            <p class="brand__subtitle">
+              at elegant vogue , we blend creativity with craftsmanship to create fashion that transcends trends and stands the test of time each design is meticulously crafted, ensuring the highest quelity exqulsite finish
+            </p>
+          </div>
+          <div class="brand__media">
+            <div class="brand__item"><img src="./src/assets/images/brand_image1.png" alt=""></div>
+            <div class="brand__item"><img src="./src/assets/images/brand_image2.png" alt=""></div>
+            <div class="brand__item"><img src="./src/assets/images/brand_image3.png" alt=""></div>
+            <div class="brand__item"><img src="./src/assets/images/brand_image4.png" alt=""></div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner container">
+        <div class="footer__content">
+          <div class="footer__info">
+            <div class="footer__links">
+              <h3 class="footer__links-title"></h3>
+              <ul class="footer__links-list">
+                <li class="footer__links-item">
+                  <li><a href="#">PRICING <span>/</span></a></li>
+                  <li><a href="#">ABOUT <span>/</span></a></li>
+                  <li><a href="#">CONTACTS</a></li>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__languages">
+              <h3 class="footer_languages-title"></h3>
+              <ul class="footer__languages-list">
+                <li><button type="button" class="footer__language-item">ENG <span>/</span></button></li>
+                <li><button type="button" class="footer__language-item">ESP <span>/</span></button></li>
+                <li><button type="button" class="footer__language-item">SVE</button></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__technologies">
+            <h3 class="footer__technologies-title">TECHNOLOGIES</h3>
+            <div class="footer__brand">
+              <img src="" alt="" class="footer__brand-mark">
+              <div class="footer__brand-content">
+                <p class="footer__brand-logo">
+                  <span class="light-gray">VR</span><br>
+                  XIV<br>
+                  QR
+                </p>
+                <span class="gray">Near-field communication </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__meta">
+          <small>© 2024 — copyright</small>
+          <a href="#">privacy</a>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+@use "../abstracts/mixins" as *;
+
+.header {
+    &__inner {
+        @include flex-beetween;
+        padding: 50px 0;
+    }
+    
+    &__menu {
+        @include flex-center;
+        gap: 32px;
+    }
+
+    &__nav-list {
+        @include flex-beetween;
+        gap: 32px;
+    }
+    
+    &__actions {
+        @include flex-beetween;
+        gap: 44px; 
+    }
+
+    &__burger {
+
+        background: none;
+        border: none;
+
+
+        &-icon {
+            @include flex-column;
+            gap: 8px;
+            
+            background-color: var(--primary-color);
+            width: 18px;
+            height: 1.5px;
+
+            &::before {
+            display: block;
+            background-color: var(--primary-color);
+            width: 26px;
+            height: 1.5px;
+            }
+
+            &::after {
+            display: block;
+            background-color: var(--primary-color);
+            width: 13px;
+            height: 1.5px;
+            }
+        }
+    }
+}
